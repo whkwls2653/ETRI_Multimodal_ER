@@ -7,10 +7,16 @@ ETRI_Multimodal_ER
 
 <img src="/structure.png" width="600px" height="400px" title="structures" alt="structures"></img><br/>
 
+본 방법론의 구조는 크게
+* 1. Feature extractor trainning
+* 2. Feature formatting to CGNN Format
+* 3. CGNN 학습
+으로 되어있다.빠른 추론을 위해 1,2번 과정을 논문에 적힌대로 수행하여
+피클링 해놓아 3번부터도 진행이 가능하니 빠른 추론을 원하는 사람은 
 
-
-
-# requirements
+0. 환경 구축
+-------
+# a. requirements
 ## dataset
 * Download 'KEMDy19' and put it /dataset/
 ## libraries
@@ -28,14 +34,19 @@ pip install -r requirements.txt
 </code>
 </pre>
 
-## pretrained models
+
+##  pretrained models
 model 안에서 자동으로 인터넷에서 받아짐.
 * sbert : 'paraphrase-distilroberta-base-v1'
 * klue : 'klue/roberta-base'
 * wav2vec2 : 'w11wo/wav2vec2-xls-r-300m-korean'
 
-# preprocess
-------------
+#
+
+1. Feature extractor trainning
+----------
+2. Feature formatting to CGNN Format
+#  preprocess
 preprocess, Train, Evaluation실행 관련해선 COGMEN_code/run_eval.sh 참조
 
 
@@ -50,7 +61,6 @@ python preprocess.py --res_dir='./data/KEMDy19/new_2019cogmen_format_speaker_onl
 </code>
 </pre>
 # Train
-------------
 preprocessed된 데이터로 CGNN학습 진행.
 * --tag : 실험 명을 입력. 학습된 ckpt가 나오는 디렉토리명 결정함.
 * --dataset : 사용할 데이터셋 설정, 본 논문에선 'KEMDy19' 고정
@@ -63,7 +73,6 @@ python train.py --tag='tmp' --dataset='KEMDy19' --modalities='at' --preprocessed
 </code>
 </pre>
 # Evaluation
-------------
 학습중 저장된 validation set의 F1이 가장 높은 모델로 테스트셋 evaluation 진행
 * --dataset : 사용할 데이터셋 설정, 본 논문에선 'KEMDy19' 고정
 * --modalities : 실험에 사용하는 모달리티 결정. at, t, a중 설정
@@ -79,10 +88,8 @@ python eval.py --dataset="KEMDy19" --modalities="t" --data_dir='./data/KEMDy19/n
 <img src="/results.png" width="600px" height="400px" title="structures" alt="structures"></img><br/>
 
 # citation
--------------
 * [1] K. J. Noh and H. Jeong, “KEMDy19,” https://nanum.etri.re.kr/share/kjnoh/KEMDy19?lang=ko_KR 
 * [2] Joshi, Abhinav, et al. "COGMEN: COntextualized GNN based multimodal emotion recognitioN." arXiv preprint arXiv:2205.02455 (2022).
 # acknowledgements
----------------
 * The structure of our code is inspired by <https://github.com/Exploration-Lab/COGMEN>
 * and <https://github.com/Mirai-Gadget-Lab/Multimodal_Emotion_Recognition>
