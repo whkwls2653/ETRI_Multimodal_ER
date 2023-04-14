@@ -14,12 +14,12 @@ ETRI_Multimodal_ER
 으로 되어있다.빠른 추론을 위해 1,2번 과정을 논문에 적힌대로 수행하여
 피클링 해놓아 3번부터도 진행이 가능하니 빠른 추론을 원하는 사람은 
 
-0. 환경 구축
--------
-# a. requirements
-## dataset
+#0. 환경 구축
+
+## a. requirements
+### dataset
 * Download 'KEMDy19' and put it /dataset/
-## libraries
+### libraries
 * torch
 * transformers
 * pytorch-lightning
@@ -35,17 +35,17 @@ pip install -r requirements.txt
 </pre>
 
 
-##  pretrained models
+### pretrained models
 model 안에서 자동으로 인터넷에서 받아짐.
 * sbert : 'paraphrase-distilroberta-base-v1'
 * klue : 'klue/roberta-base'
 * wav2vec2 : 'w11wo/wav2vec2-xls-r-300m-korean'
 
-#
 
-1. Feature extractor trainning
-----------
-2. Feature formatting to CGNN Format
+
+#1. Feature extractor trainning
+
+#2. Feature formatting to CGNN Format
 #  preprocess
 preprocess, Train, Evaluation실행 관련해선 COGMEN_code/run_eval.sh 참조
 
