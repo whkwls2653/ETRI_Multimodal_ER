@@ -7,7 +7,6 @@ ETRI_Multimodal_ER
 
 * <img src="/structure.png" width="800px" height="600px" title="structures" alt="structures"></img><br/>
 
-![Alt text]('/structure.png')
 
 
 
@@ -56,8 +55,7 @@ python preprocess.py --res_dir=
 ------------
 '''
 '''
-
-<img src="/results.png" width="800px" height="600px" title="results" alt=results"></img><br/>
+* <img src="/results.png" width="800px" height="600px" title="structures" alt="structures"></img><br/>
 
 # citation
 -------------
