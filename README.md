@@ -8,15 +8,14 @@ ETRI_Multimodal_ER
 <img src="/structure.png" width="600px" height="400px" title="structures" alt="structures"></img><br/>
 
 본 방법론의 구조는 크게
-* 1. Feature extractor trainning
-* 2. Feature formatting to CGNN Format
-* 3. CGNN 학습
-으로 되어있다.빠른 추론을 위해 1,2번 과정을 논문에 적힌대로 수행하여
-피클링 해놓아 3번부터도 진행이 가능하니 빠른 추론을 원하는 사람은 
-
-#0. 환경 구축
-
-## a. requirements
+1. Feature extractor trainning
+2. Feature formatting to CGNN Format
+3. CGNN 학습  
+으로 되어있다.  
+빠른 추론을 위해 1,2번 과정을 논문에 적힌대로 수행하여 피클링 해놓아  
+3번부터도 진행이 가능하니 빠른 추론을 원하는 사람은 3번 if부터 진행하길 바람.
+# 0. 환경 구축
+## requirements
 ### dataset
 * Download 'KEMDy19' and put it /dataset/
 ### libraries
@@ -33,23 +32,51 @@ ETRI_Multimodal_ER
 pip install -r requirements.txt
 </code>
 </pre>
-
-
 ### pretrained models
 model 안에서 자동으로 인터넷에서 받아짐.
 * sbert : 'paraphrase-distilroberta-base-v1'
 * klue : 'klue/roberta-base'
 * wav2vec2 : 'w11wo/wav2vec2-xls-r-300m-korean'
 
+# 1. Feature extractor trainning 
+run_command.sh 명령어들 참조.
+--exp_name : 실험 제목, 결과물 폴더명.
+--using_model : feature extractor 학습시 사용하는 모달리티, 본 논문에서는 both 고정
+--test_1920 : CGNN 테스트셋을 feature extractor 학습의 데이터셋으로 사용하지 않기위해 test set을 19,20 session으로 고정
+<pre>
+<code>
+python trainer_hf.py --exp_name both_test_1920_speakeronly  --using_model both --batch_size 2 --accumulate_grad 8 --test_1920=True --csv_path="./data/annotation_speaker_only.csv"
+</code>
+</pre>
 
+# 2. Feature formatting to CGNN Format
+주의)2번 단계는 MIRAI/config.py의 feature_extract: bool =True로 바꾸어 진행
+--model_save_path : ./models_zoo/checkpoint/에서 feature extractor로 사용하고자 하는 ckpt 설정
+<pre>
+<code>
+cd COGMEN_Code
 
-#1. Feature extractor trainning
+python cogmen_formatting.py
+cd ../MIRAI
+CUDA_VISIBLE_DEVICES=0 python feature_extractor_cogmen_format.py --features_format_path='../COGMEN_code/data/KEMDy19/new_2019cogmen_format_speaker_only.pkl'  --model_save_path='/your/ckpt/path' --csv_path='./data/annotation_speaker_only.csv'
+</code>
+</pre>
 
-#2. Feature formatting to CGNN Format
-#  preprocess
+# 3. CGNN 학습 및 추론
+## if)3번부터 시작하기 -> 피클파일 unzip
+<pre>
+<code>
+apt-get install zip unzip
+cd COGMEN_code/data/KEMDy19
+zip -s 0 zip.zip --out unziptest.zip
+unzip unziptest.zip
+cd COGMEN_code/model_checkpoints
+zip -s 0 zip.zip --out unziptest.zip
+unzip unziptest.zip
+</code>
+</pre>
+##  preprocess
 preprocess, Train, Evaluation실행 관련해선 COGMEN_code/run_eval.sh 참조
-
-
 cogmen formatting.py로 나온 Csession, test, train 정보를 바탕으로 pkl file 형성
 * --res_dir : preprocessed pkl file 생성 위치
 * --feat_dir : feature extract하여 cogmen format으로 맞춰 피클링한 파일 위치
@@ -60,7 +87,7 @@ cogmen formatting.py로 나온 Csession, test, train 정보를 바탕으로 pkl 
 python preprocess.py --res_dir='./data/KEMDy19/new_2019cogmen_format_speaker_only_feat_preprocessed.pkl' --feat_dir='./data/KEMDy19/new_2019cogmen_format_speaker_only_feat.pkl' --dataset='KEMDy19'
 </code>
 </pre>
-# Train
+## Train
 preprocessed된 데이터로 CGNN학습 진행.
 * --tag : 실험 명을 입력. 학습된 ckpt가 나오는 디렉토리명 결정함.
 * --dataset : 사용할 데이터셋 설정, 본 논문에선 'KEMDy19' 고정
@@ -72,7 +99,7 @@ preprocessed된 데이터로 CGNN학습 진행.
 python train.py --tag='tmp' --dataset='KEMDy19' --modalities='at' --preprocessed_feature='./data/KEMDy19/new_2019cogmen_format_speaker_only_feat_preprocessed.pkl' --from_begin --epochs=100
 </code>
 </pre>
-# Evaluation
+## Evaluation
 학습중 저장된 validation set의 F1이 가장 높은 모델로 테스트셋 evaluation 진행
 * --dataset : 사용할 데이터셋 설정, 본 논문에선 'KEMDy19' 고정
 * --modalities : 실험에 사용하는 모달리티 결정. at, t, a중 설정
