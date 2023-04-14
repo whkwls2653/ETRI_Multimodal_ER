@@ -4,8 +4,9 @@ ETRI_Multimodal_ER
 * Data: KEMDy19
 * Modality : Audio, Text 
 * Title : 'Contextualized GNN구조를 활용한 한국어 대화에서의 멀티모달 감정인식'
-![Alt text](./structure.png)
-Installation
+![Alt text]('./structure.png')
+
+
 
 # requirements
 ##libraries
