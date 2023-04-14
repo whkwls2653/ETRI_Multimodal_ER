@@ -11,16 +11,28 @@ Installation
 * torch
 * transformer
 * pytorch-lightning
+* PyTorch Geometric
+* Comet 
+* sbert
+
+
 
 # preprocess
 ------------
 '''
+%cd COGMEN_code
+
 '''
 # Train
 ------------
 '''
+
 '''
 # Evaluation
 ------------
 '''
 '''
+# citation
+-------------
+# acknowledgements
+---------------
