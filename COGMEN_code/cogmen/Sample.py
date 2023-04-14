@@ -1,7 +1,7 @@
 from sentence_transformers import SentenceTransformer
 
 
-sbert_model = SentenceTransformer("/workspace/data1/emotion_competition/Code/COGMEN_code/cogmen/sbert")
+sbert_model = SentenceTransformer("paraphrase-distilroberta-base-v1")
 
 
 class Sample:
