@@ -11,7 +11,9 @@ ETRI_Multimodal_ER
 
 
 # requirements
-##libraries
+## dataset
+* Download 'KEMDy19' and put it /dataset/
+## libraries
 * torch
 * transformers
 * pytorch-lightning
