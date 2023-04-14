@@ -4,8 +4,8 @@ ETRI_Multimodal_ER
 * Data: KEMDy19
 * Modality : Audio, Text 
 * Title : 'Contextualized GNN구조를 활용한 한국어 대화에서의 멀티모달 감정인식'
-* <img src="/structure.png" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
-<img src="/path/to/img.jpg" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img
+* <img src="/structure.png" width="800px" height="600px" title="structures" alt="structures"></img><br/>
+
 ![Alt text]('/structure.png')
 
 
@@ -55,7 +55,7 @@ python preprocess.py --res_dir=
 ------------
 '''
 '''
-![Alt text](./results.png)
+* <img src="/results.png" width="800px" height="600px" title="results" alt=results"></img><br/>
 # citation
 -------------
 [1] K. J. Noh and H. Jeong, “KEMDy19,” https://nanum.etri.re.kr/share/kjnoh/KEMDy19?lang=ko_KR 
