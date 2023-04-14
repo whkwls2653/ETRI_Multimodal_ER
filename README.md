@@ -19,11 +19,13 @@ Installation
 
 # preprocess
 ------------
-'''
+<pre>
+<code>
 
 %cd COGMEN_code
 
-'''
+</code>
+</pre>
 # Train
 ------------
 '''
