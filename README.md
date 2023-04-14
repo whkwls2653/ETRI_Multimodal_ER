@@ -5,7 +5,7 @@ ETRI_Multimodal_ER
 * Modality : Audio, Text 
 * Title : 'Contextualized GNN구조를 활용한 한국어 대화에서의 멀티모달 감정인식'
 
-* <img src="/structure.png" width="800px" height="600px" title="structures" alt="structures"></img><br/>
+<img src="/structure.png" width="600px" height="400px" title="structures" alt="structures"></img><br/>
 
 
 
@@ -26,6 +26,7 @@ ETRI_Multimodal_ER
 
 </code>
 </pre>
+
 ## pretrained models
 * sbert
 <pre>
@@ -38,24 +39,46 @@ ETRI_Multimodal_ER
 # preprocess
 ------------
 preprocess, Train, Evaluation실행 관련해선 COGMEN_code/run_eval.sh 참조
-cogmen formatting.py로 나온 Csession, test, train 정보를 바탕으로
+
+
+cogmen formatting.py로 나온 Csession, test, train 정보를 바탕으로 pkl file 형성
+--res_dir : preprocessed pkl file 생성 위치
+--feat_dir : feature extract하여 cogmen format으로 맞춰 피클링한 파일 위치
+--dataset : 사용할 데이터셋 설정, 본 논문에선 'KEMDy19' 고정
 <pre>
 <code>
-
 %cd COGMEN_code
-python preprocess.py --res_dir=
+python preprocess.py --res_dir='./data/KEMDy19/new_2019cogmen_format_speaker_only_feat_preprocessed.pkl' --feat_dir='./data/KEMDy19/new_2019cogmen_format_speaker_only_feat.pkl' --dataset='KEMDy19'
 </code>
 </pre>
 # Train
 ------------
-'''
-
-'''
+preprocessed된 데이터로 CGNN학습 진행.
+--tag : 실험 명을 입력. 학습된 ckpt가 나오는 디렉토리명 결정함.
+--dataset : 사용할 데이터셋 설정, 본 논문에선 'KEMDy19' 고정
+--modalities : 실험에 사용하는 모달리티 결정. at, t, a중 설정
+--from_begin : 처음부터 학습
+--epochs : 학습에폭 수
+<pre>
+<code>
+python train.py --tag='tmp' --dataset='KEMDy19' --modalities='at' --preprocessed_feature='./data/KEMDy19/new_2019cogmen_format_speaker_only_feat_preprocessed.pkl' --from_begin --epochs=100
+</code>
+</pre>
 # Evaluation
 ------------
-'''
-'''
-* <img src="/results.png" width="800px" height="600px" title="structures" alt="structures"></img><br/>
+학습중 저장된 validation set의 F1이 가장 높은 모델로 테스트셋 evaluation 진행
+--dataset : 사용할 데이터셋 설정, 본 논문에선 'KEMDy19' 고정
+--modalities : 실험에 사용하는 모달리티 결정. at, t, a중 설정
+--data_dir : evaluation에 사용되는 preprocessed된 pkl파일 설정. 해당 pkl에 test 발화 정보가 매핑되어 있어. 스스로 test셋 꾸려 사용.
+<pre>
+<code>
+python eval.py --dataset="KEMDy19" --modalities="at" --data_dir='./data/KEMDy19/new_2019cogmen_format_speaker_only_feat_preprocessed.pkl' --pt_dir='./model_checkpoints/KEMDy19_best_dev_f1_model_at_MIRAI_pretrained_speaker_only.pt'
+python eval.py --dataset="KEMDy19" --modalities="a" --data_dir='./data/KEMDy19/new_2019cogmen_format_speaker_only_feat_preprocessed.pkl' --pt_dir='./model_checkpoints/KEMDy19_best_dev_f1_model_a_MIRAI_pretrained_speaker_only.pt'
+python eval.py --dataset="KEMDy19" --modalities="t" --data_dir='./data/KEMDy19/new_2019cogmen_format_speaker_only_feat_preprocessed.pkl' --pt_dir='./model_checkpoints/KEMDy19_best_dev_f1_model_t_MIRAI_pretrained_speaker_only.pt'
+</code>
+</pre>
+
+<img src="/results.png" width="600px" height="400px" title="structures" alt="structures"></img><br/>
 
 # citation
 -------------
