@@ -1,0 +1,7 @@
+transformers
+pytorch-lightning
+PyTorcch Geometric
+Comet
+pandas
+librosa
+sklearn
