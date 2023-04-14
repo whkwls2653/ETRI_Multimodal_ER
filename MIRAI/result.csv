@@ -1,0 +1,2 @@
+model,loss,accuracy,f1_score
+audio_test_1920,cross_entropy,0.6653846153846154,0.6544071205250062
