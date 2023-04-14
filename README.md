@@ -1,5 +1,5 @@
 ETRI_Multimodal_ER
-
+=================
 * ETRI 멀티모달 감정인식 대회
 * Data: KEMDy19
 * Modality : Audio, Text 
@@ -8,20 +8,26 @@ ETRI_Multimodal_ER
 Installation
 
 # requirements
+##libraries
 * torch
 * transformers
 * pytorch-lightning
 * PyTorch Geometric
 * Comet 
-
 * pandas
 * librosa
 * sklearn
-# pretrained models
+<pre>
+<code>
+
+
+</code>
+</pre>
+## pretrained models
 * sbert
 <pre>
 <code>
-pip install transformers
+
 
 </code>
 </pre>
