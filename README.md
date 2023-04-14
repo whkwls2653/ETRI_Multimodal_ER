@@ -4,7 +4,9 @@ ETRI_Multimodal_ER
 * Data: KEMDy19
 * Modality : Audio, Text 
 * Title : 'Contextualized GNN구조를 활용한 한국어 대화에서의 멀티모달 감정인식'
-![Alt text]('./structure.png')
+* <img src="/path/to/img.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
+<img src="/path/to/img.jpg" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img
+![Alt text]('/structure.png')
 
 
 
