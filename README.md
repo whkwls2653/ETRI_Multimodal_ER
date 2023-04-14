@@ -1,12 +1,12 @@
 ETRI_Multimodal_ER
-======================
+
 * ETRI 멀티모달 감정인식 대회
 * Data: KEMDy19
 * Modality : Audio, Text 
 * Title : 'Contextualized GNN구조를 활용한 한국어 대화에서의 멀티모달 감정인식'
 ![Alt text](/path/to/img.jpg)
 Installation
---------------
+
 # requirements
 * torch
 * transformers
@@ -49,7 +49,7 @@ python preprocess.py --res_dir=
 # citation
 -------------
 [1] K. J. Noh and H. Jeong, “KEMDy19,” https://nanum.etri.re.kr/share/kjnoh/KEMDy19?lang=ko_KR 
-[2] 
+[2] Joshi, Abhinav, et al. "COGMEN: COntextualized GNN based multimodal emotion recognitioN." arXiv preprint arXiv:2205.02455 (2022).
 # acknowledgements
 ---------------
 The structure of our code is inspired by <https://github.com/Exploration-Lab/COGMEN> and <https://github.com/Mirai-Gadget-Lab/Multimodal_Emotion_Recognition>
