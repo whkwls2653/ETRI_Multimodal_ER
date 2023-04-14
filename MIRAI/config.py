@@ -19,6 +19,6 @@ class HF_TrainConfig():
     log_dir: str = './models_zoo/tensorboard/'
     using_model: str = 'both'
     batch_size: int = 4
-    text_encoder: str = "/workspace/data1/emotion_competition/Code/MIRAI/pretrained/klue_roberta_tot"
-    audio_processor: str = "/workspace/data1/emotion_competition/Code/MIRAI/pretrained/wav2vec2_korean_tot"
+    text_encoder: str = "klue/roberta-base"
+    audio_processor: str = "w11wo/wav2vec2-xls-r-300m-korean"
     feature_extract: bool = False
