@@ -11,7 +11,7 @@ ETRI_Multimodal_ER
 ### 1. Feature extractor trainning
 ### 2. Feature formatting to CGNN Format
 ### 3. CGNN 학습  
-빠른 추론을 위해 1,2번 과정을 논문에 적힌대로 수행하여 피클링 해놓아  
+빠른 추론을 위해 1,2번 과정을 논문에 적힌대로 수행하여 피클링후 분할압축 해놓아  
 3번부터도 진행이 가능하니 빠른 추론을 원하는 사람은 3번 if부터 진행하길 바람.
 # 0. 환경 구축
 ## requirements
