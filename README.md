@@ -24,19 +24,15 @@ ETRI_Multimodal_ER
 * sklearn
 <pre>
 <code>
-
-
+pip install -r requirements.txt
 </code>
 </pre>
 
 ## pretrained models
-* sbert
-<pre>
-<code>
-
-
-</code>
-</pre>
+model 안에서 자동으로 인터넷에서 받아짐.
+* sbert : 'paraphrase-distilroberta-base-v1'
+* klue : 'klue/roberta-base'
+* wav2vec2 : 'w11wo/wav2vec2-xls-r-300m-korean'
 
 # preprocess
 ------------
