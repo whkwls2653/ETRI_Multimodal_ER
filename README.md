@@ -38,13 +38,13 @@ model 안에서 자동으로 인터넷에서 받아짐.
 * wav2vec2 : 'w11wo/wav2vec2-xls-r-300m-korean'
 
 # 1. Feature extractor trainning 
-run_command.sh 명령어들 참조.
+run_command.sh 명령어들 참조.  
 --exp_name : 실험 제목, 결과물 폴더명.  
 --using_model : feature extractor 학습시 사용하는 모달리티, 본 논문에서는 both 고정  
 --test_1920 : CGNN 테스트셋을 feature extractor 학습의 데이터셋으로 사용하지 않기위해 test set을 19,20 session으로 고정  
 <pre>
 <code>
-python trainer_hf.py  --exp_name both_test_1920_speakeronly  --using_model both --batch_size 2 --accumulate_grad 8 --test_1920=True --csv_path="./data/annotation_speaker_only.csv"
+python trainer_hf.py --exp_name both_test_1920_speakeronly --using_model both --batch_size 2 --accumulate_grad 8 --test_1920=True --csv_path="./data/annotation_speaker_only.csv"
 </code>
 </pre>
 
