@@ -85,10 +85,10 @@ preprocess, Train, Evaluation실행 관련해선 COGMEN_code/run_eval.sh 참조
 cogmen formatting.py로 나온 Csession, test, train 정보를 바탕으로 pkl file 형성  
 * --res_dir : preprocessed pkl file 생성 위치
 * --feat_dir : feature extract하여 cogmen format으로 맞춰 피클링한 파일 위치  
-* --dataset : 사용할 데이터셋 설정, 본 논문에선 'KEMDy19' 고정  
+* --dataset : 사용할 데이터셋 설정, 본 논문에선 'KEMDy19' 고정   
+* 현재 디렉토리 확인해서 github root에 있도록 해야함.
 <pre>
 <code>
-#현재 디렉토리 확인해서 github root에 있도록 해야함.
 cd COGMEN_code
 python preprocess.py --res_dir='./data/KEMDy19/new_2019cogmen_format_speaker_only_feat_preprocessed.pkl' --feat_dir='./data/KEMDy19/new_2019cogmen_format_speaker_only_feat.pkl' --dataset='KEMDy19'
 </code>
