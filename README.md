@@ -75,7 +75,7 @@ apt-get install zip unzip
 cd COGMEN_code/data/KEMDy19
 zip -s 0 zip.zip --out unziptest.zip
 unzip unziptest.zip
-cd COGMEN_code/model_checkpoints
+cd ../../model_checkpoints
 zip -s 0 zip.zip --out unziptest.zip
 unzip unziptest.zip
 </code>
@@ -88,7 +88,8 @@ cogmen formatting.py로 나온 Csession, test, train 정보를 바탕으로 pkl 
 * --dataset : 사용할 데이터셋 설정, 본 논문에선 'KEMDy19' 고정  
 <pre>
 <code>
-%cd COGMEN_code
+#현재 디렉토리 확인해서 github root에 있도록 해야함.
+cd COGMEN_code
 python preprocess.py --res_dir='./data/KEMDy19/new_2019cogmen_format_speaker_only_feat_preprocessed.pkl' --feat_dir='./data/KEMDy19/new_2019cogmen_format_speaker_only_feat.pkl' --dataset='KEMDy19'
 </code>
 </pre>
