@@ -44,7 +44,7 @@ run_command.sh 명령어들 참조.
 --test_1920 : CGNN 테스트셋을 feature extractor 학습의 데이터셋으로 사용하지 않기위해 test set을 19,20 session으로 고정  
 <pre>
 <code>
-python trainer_hf.py --exp_name both_test_1920_speakeronly  --using_model both --batch_size 2 --accumulate_grad 8 --test_1920=True --csv_path="./data/annotation_speaker_only.csv"
+python trainer_hf.py  --exp_name both_test_1920_speakeronly  --using_model both --batch_size 2 --accumulate_grad 8 --test_1920=True --csv_path="./data/annotation_speaker_only.csv"
 </code>
 </pre>
 
