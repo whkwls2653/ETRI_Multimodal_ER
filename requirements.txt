@@ -1,7 +1,7 @@
 transformers
 pytorch-lightning
-PyTorcch Geometric
-Comet
+torch-geometric
+comet
 pandas
 librosa
 sklearn
