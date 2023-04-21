@@ -5,3 +5,4 @@ comet
 pandas
 librosa
 sklearn
+sentence_transformers
