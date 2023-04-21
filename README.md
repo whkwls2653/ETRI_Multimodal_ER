@@ -15,6 +15,12 @@ ETRI_Multimodal_ER
 3번부터도 진행이 가능하니 빠른 추론을 원하는 사람은 3번 if부터 진행하길 바람.
 # 0. 환경 구축
 ## requirements
+### Codes
+<pre>
+<code>
+git clone https://github.com/whkwls2653/ETRI_Multimodal_ER /your/path
+</code>
+</pre>
 ### dataset
 * Download 'KEMDy19' and put it /dataset/
 ### libraries
