@@ -69,7 +69,11 @@ CUDA_VISIBLE_DEVICES=0 python feature_extractor_cogmen_format.py --features_form
 
 # 3. CGNN 학습 및 추론
 ## if)3번부터 시작하기 -> 피클파일 unzip
-*unzip 버전 문제로 안될경우 다운받아 알집 분할압축 해제 사용.
+*linux에서 unzip 버전 문제로 안될경우 다운받아 윈도우 알집 분할압축 해제 사용. 압축 해제해야하는 파일은 아래와 같다.  
+분할 압축 해제 후 동일 위치에 넣어주면 된다.
+* COGMEN_code/data/KEMDy19/zip.zip
+* COGMEN_code/model_checkpoints/zip.zip
+
 <pre>
 <code>
 apt-get install zip unzip
