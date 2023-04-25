@@ -69,6 +69,7 @@ CUDA_VISIBLE_DEVICES=0 python feature_extractor_cogmen_format.py --features_form
 
 # 3. CGNN 학습 및 추론
 ## if)3번부터 시작하기 -> 피클파일 unzip
+*unzip 버전 문제로 안될경우 다운받아 알집 분할압축 해제 사용.
 <pre>
 <code>
 apt-get install zip unzip
