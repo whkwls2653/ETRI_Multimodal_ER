@@ -68,7 +68,8 @@ CUDA_VISIBLE_DEVICES=0 python feature_extractor_cogmen_format.py --features_form
 </pre>
 
 # 3. CGNN 학습 및 추론
-## if)3번부터 시작하기 -> 피클파일 분할압축 해제 -> CGNN학습 모델도 있어 바로 evaluation 
+## if)3번부터 시작하기
+피클파일 분할압축 해제 -> CGNN학습 모델도 있어 바로 evaluation 단계로 넘어가기 가능
 
 <pre>
 <code>
