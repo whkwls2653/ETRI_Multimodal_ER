@@ -68,23 +68,18 @@ CUDA_VISIBLE_DEVICES=0 python feature_extractor_cogmen_format.py --features_form
 </pre>
 
 # 3. CGNN 학습 및 추론
-## if)3번부터 시작하기 -> 피클파일 unzip
+## if)3번부터 시작하기 -> 피클파일 분할압축 해제
 
 <pre>
 <code>
-apt-get install zip unzip
-cd COGMEN_code/data/KEMDy19
-zip -s 0 zip.zip --out unziptest.zip
-unzip unziptest.zip
-cd ../../model_checkpoints
-zip -s 0 zip.zip --out unziptest.zip
-unzip unziptest.zip
+apt-get install p7zip
+cd COGMEN_code
+7z x kernel.7z.001 -aoa
+cd data
+7z x kernel.7z.001 -aoa
+
 </code>
 </pre>
-*위코드 실행시 에러가 날경우 linux unzip에 문제가 있는것이므로, 그때에는 파일을 직접 다운받아 윈도우 알집프로그램으로 분할압축 해제한 후 동일 위치에 넣어주면 된다.
-압축 해제 해야하는 파일은 아래와 같다.  
-* COGMEN_code/data/KEMDy19/zip.zip
-* COGMEN_code/model_checkpoints/zip.zip
 
 ##  preprocess
 preprocess, Train, Evaluation실행 관련해선 COGMEN_code/run_eval.sh 참조  
