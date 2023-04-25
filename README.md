@@ -69,10 +69,6 @@ CUDA_VISIBLE_DEVICES=0 python feature_extractor_cogmen_format.py --features_form
 
 # 3. CGNN 학습 및 추론
 ## if)3번부터 시작하기 -> 피클파일 unzip
-*linux에서 unzip 버전 문제로 안될경우 다운받아 윈도우 알집 분할압축 해제 사용. 압축 해제해야하는 파일은 아래와 같다.  
-분할 압축 해제 후 동일 위치에 넣어주면 된다.
-* COGMEN_code/data/KEMDy19/zip.zip
-* COGMEN_code/model_checkpoints/zip.zip
 
 <pre>
 <code>
@@ -85,6 +81,11 @@ zip -s 0 zip.zip --out unziptest.zip
 unzip unziptest.zip
 </code>
 </pre>
+*위코드 실행시 에러가 날경우 linux에서 unzip문제가 있는것으로로, 안될경우에는 다운받아 윈도우 알집 분할압축 해제 사용. 압축 해제해야하는 파일은 아래와 같다.  
+분할 압축 해제 후 동일 위치에 넣어주면 된다.
+* COGMEN_code/data/KEMDy19/zip.zip
+* COGMEN_code/model_checkpoints/zip.zip
+
 ##  preprocess
 preprocess, Train, Evaluation실행 관련해선 COGMEN_code/run_eval.sh 참조  
 cogmen formatting.py로 나온 Csession, test, train 정보를 바탕으로 pkl file 형성  
