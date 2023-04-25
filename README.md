@@ -81,8 +81,8 @@ zip -s 0 zip.zip --out unziptest.zip
 unzip unziptest.zip
 </code>
 </pre>
-*위코드 실행시 에러가 날경우 linux에서 unzip문제가 있는것으로로, 안될경우에는 다운받아 윈도우 알집 분할압축 해제 사용. 압축 해제해야하는 파일은 아래와 같다.  
-분할 압축 해제 후 동일 위치에 넣어주면 된다.
+*위코드 실행시 에러가 날경우 linux unzip에 문제가 있는것이므로, 그때에는 파일을 직접 다운받아 윈도우 알집프로그램으로 분할압축 해제한 후 동일 위치에 넣어주면 된다.
+압축 해제 해야하는 파일은 아래와 같다.  
 * COGMEN_code/data/KEMDy19/zip.zip
 * COGMEN_code/model_checkpoints/zip.zip
 
