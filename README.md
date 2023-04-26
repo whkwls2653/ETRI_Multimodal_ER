@@ -39,7 +39,8 @@ pip install -r requirements.txt
 </code>
 </pre>
 ### pretrained models
-model 안에서 자동으로 인터넷에서 받아짐.
+model 안에서 자동으로 인터넷에서 받아지므로 아래 코드 실행을 위해 인터넷 연결 필요.  
+local 환경에서 실행하기 위해선 해당 사전학습 모델을 인터넷에서 다운받아 위치 지정 후 사용.
 * sbert : 'paraphrase-distilroberta-base-v1'
 * klue : 'klue/roberta-base'
 * wav2vec2 : 'w11wo/wav2vec2-xls-r-300m-korean'
