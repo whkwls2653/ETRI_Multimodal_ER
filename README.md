@@ -61,9 +61,8 @@ python trainer_hf.py --exp_name both_test_1920_speakeronly --using_model both --
 </pre>
 
 # 2. Feature formatting to CGNN Format
-주의)2번 단계는 MIRAI/config.py의 feature_extract: bool =True로 바꾸어 진행
+주의)2번 단계는 MIRAI/config.py의 feature_extract: bool =True로 바꾸어 진행  
 피클파일 분할압축 해제 -> CGNN 포맷 정보가 피클파일에 있어 해제 필요
-
 <pre>
 <code>
 apt-get install p7zip
