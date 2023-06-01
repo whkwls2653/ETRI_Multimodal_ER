@@ -46,7 +46,7 @@ local 환경에서 실행하기 위해선 해당 사전학습 모델을 인터�
 * wav2vec2 : 'w11wo/wav2vec2-xls-r-300m-korean'
 
 # 1. Feature extractor trainning
-학습전 학습에 필요한 KEMDy19데이터셋중 wav와 txt파일만 모아 MIRAI/data/wav_txt 폴더 구성해야함. 아래 그림 참조
+학습전 학습에 필요한 KEMDy19데이터셋중 wav와 txt파일만 모아 MIRAI/data/wav_txt 폴더 구성해야함. 아래 그림 참조  
 <img src="/txt_wav.png" width="600px" height="400px" title="structures" alt="structures"></img><br/>
 run_command.sh 명령어들 참조.  
 --exp_name : 실험 제목, 결과물 폴더명.  
