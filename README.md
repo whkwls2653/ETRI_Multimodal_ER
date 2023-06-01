@@ -55,12 +55,26 @@ run_command.sh 명령어들 참조.
 --batch_size : 환경에 맞는 batch size 설정필요
 <pre>
 <code>
-python trainer_hf.py --exp_name both_test_1920_speakeronly --using_model both --batch_size 2 --accumulate_grad 8 --test_1920=True --csv_path="./data/annotation_speaker_only.csv"
+cd MIRAI
+python trainer_hf.py --exp_name both_test_1920_speakeronly --using_model both --batch_size 1 --accumulate_grad 8 --test_1920=True --csv_path="./data/annotation_speaker_only.csv"
 </code>
 </pre>
 
 # 2. Feature formatting to CGNN Format
-주의)2번 단계는 MIRAI/config.py의 feature_extract: bool =True로 바꾸어 진행  
+주의)2번 단계는 MIRAI/config.py의 feature_extract: bool =True로 바꾸어 진행
+피클파일 분할압축 해제 -> CGNN 포맷 정보가 피클파일에 있어 해제 필요
+
+<pre>
+<code>
+apt-get install p7zip
+cd COGMEN_code
+7z x kernel.7z.001 -aoa
+cd data
+7z x kernel.7z.001 -aoa
+
+</code>
+</pre>
+
 --model_save_path : ./models_zoo/checkpoint/에서 feature extractor로 사용하고자 하는 ckpt 설정  
 <pre>
 <code>
