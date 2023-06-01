@@ -36,17 +36,20 @@ class Emotion_MultinomialModel(nn.Module):
             text_feat = self.text_encoder(**text_inputs)['pooler_output']
             audio_feat = self.audio_encoder(**audio_inputs)[0]
             audio_feat = self.audio_pool(audio_feat).squeeze()
-            # print('txt/audio feats shape:',text_feat.shape,audio_feat.shape)
+            #print('txt/audio feats shape:',text_feat.shape,audio_feat.shape)
             # print('---------------------\n',self.config.feature_extract)
             # print(audio_feat)
             # print(text_feat)
             # if self.config.feature_extract==True:
-            # if text_feat.shape!=audio_feat.shape:
-            #     feat = torch.cat([text_feat, audio_feat.unsqueeze(dim=0)], dim=1)
-            # else:
-            #     feat = torch.cat([text_feat, audio_feat], dim=1)
+            if text_feat.shape!=audio_feat.shape:
+                feat = torch.cat([text_feat, audio_feat.unsqueeze(dim=0)], dim=1)
+                #print('---------------after-----------')
+            
+            else:
+                feat = torch.cat([text_feat, audio_feat], dim=1)
             # return feat
-            feat = torch.cat([text_feat, audio_feat], dim=1)
+            
+            #feat = torch.cat([text_feat, audio_feat], dim=1)
         elif self.config.using_model == 'text':
             feat = self.text_encoder(**text_inputs)['pooler_output']
         
