@@ -5,5 +5,5 @@ comet
 comet-ml
 pandas
 librosa
-sklearn
+scikit-learn
 sentence_transformers
